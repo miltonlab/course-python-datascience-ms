@@ -4,6 +4,8 @@ import pandas as pd
 # Ensuring you set the appropriate header column names
 #
 # .. your code here ..
+df = pd.read_csv('course-python-datascience-ms/DAT210x/Module2/Datasets/servo.data', 
+                 names=['motor', 'screw', 'pgain', 'vgain', 'class'])
 
 
 # TODO: Create a slice that contains all entries
@@ -11,7 +13,7 @@ import pandas as pd
 # length of (# of samples in) that slice:
 #
 # .. your code here ..
-
+r = df.loc[['vgain' == 5],:]
 
 # TODO: Create a slice that contains all entries
 # having a motor equal to E and screw equal
