@@ -4,7 +4,7 @@ import pandas as pd
 # Ensuring you set the appropriate header column names
 #
 # .. your code here ..
-df = pd.read_csv('~/course-python-datascience-ms/DAT210x/Module2/Datasets/servo.data', 
+df = pd.read_csv('~/courses/course-python-datascience-ms/DAT210x/Module2/Datasets/servo.data', 
                  names=['motor', 'screw', 'pgain', 'vgain', 'class'])
 
 
@@ -14,7 +14,7 @@ df = pd.read_csv('~/course-python-datascience-ms/DAT210x/Module2/Datasets/servo.
 #
 # .. your code here ..
 samples = df[df.vgain==5]
-l = len(samples)
+print(len(samples))
 
 # TODO: Create a slice that contains all entries
 # having a motor equal to E and screw equal
@@ -22,7 +22,8 @@ l = len(samples)
 # samples in) that slice:
 #
 # .. your code here ..
-
+samples2 = df[(df['motor'] == 'E') & (df['screw'] == 'E')] 
+print (len(samples2))
 
 
 # TODO: Create a slice that contains all entries
@@ -33,10 +34,19 @@ l = len(samples)
 #
 # .. your code here ..
 
+samples3 = df[df.pgain == 4] 
+mean = samples3.vgain.mean()
+print (mean)
 
 
 # TODO: (Bonus) See what happens when you run
 # the .dtypes method on your dataframe!
 
-
+#df.dtypes
+#motor     object
+#screw     object
+#pgain      int64
+#vgain      int64
+#class    float64
+#dtype: object
 
