@@ -7,6 +7,9 @@ import numpy as np
 # Load up the dataset, setting correct header labels.
 #
 # .. your code here ..
+#df = pd.read_csv('~/courses/course-python-datascience-ms/DAT210x/Module2/Datasets/census.data', 
+df = pd.read_csv('~/course-python-datascience-ms/DAT210x/Module2/Datasets/census.data', 
+                 names=['education', 'age', 'capital-gain', 'race', 'capital-loss', 'hours-per-week', 'sex', 'classification'])
 
 
 
@@ -24,8 +27,12 @@ import numpy as np
 # na_values when loading the dataframe.
 #
 # .. your code here ..
+df.dtypes # review types
+#df.col.....unique() help to review things
+df['capital-gain'] = pd.to_numeric(df['capital-gain'],errors='coerse')
+df['capital-loss'] = pd.to_numeric(df['capital-loss'],errors='coerse')
 
-
+df['capital-gain'] = df['capital-gain'].fillna(0)
 
 #
 # TODO:
